@@ -12,9 +12,7 @@ const Statistics = ({ title, stats }) => {
             key={stat.id}
             className={styles.item}
             style={{
-              backgroundColor: `rgb(${getRandom(0, 255)}, 
-              ${getRandom(0, 255)}, 
-              ${getRandom(0, 255)})`,
+              backgroundColor: getColor(),
             }}
           >
             <span className={styles.label}>{stat.label}</span>
@@ -32,5 +30,8 @@ Statistics.propTypes = {
 };
 
 const getRandom = (min, max) => Math.ceil(Math.random() * (max - min) + min);
+
+const getColor = () =>
+  `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
 
 export default Statistics;
